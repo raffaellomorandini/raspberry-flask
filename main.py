@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
-host = "255.255.255.255"
+host = "127.0.0.0"
 port = 4200
 
 @app.route("/")
