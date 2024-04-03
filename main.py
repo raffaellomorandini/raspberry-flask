@@ -11,26 +11,42 @@ def home():
 
 @app.route("/es1")
 def esercizio1():
-    return "suceed"
+    try:
+        print("es1")
+        return "suceed"
+    except:
+        return "failed"
+    
 @app.route("/es2")
 def esercizio2():
-    return "succed"
+    try:
+        print("es2")
+        return "suceed"
+    except:
+        return "failed"
 
 @app.route("/es3")
 def esercizio3():
-    args = request.args
-    led = args.get("led")
-    tempo = args.get("tempo")
-    volte = args.get("volte")
-    print(led,tempo,volte)
-    return "succed"
+    try:
+        args = request.args
+        led = args.get("led")
+        tempo = args.get("tempo")
+        volte = args.get("volte")
+        print(led,tempo,volte)
+        return "suceed"
+    except:
+        return "failed"
 
 @app.route("/es4")
 def esercizio4():
-    args = request.args
-    verso=args.get("verso")
-    print(verso)
-    return "succed"
+    try:
+        args = request.args
+        verso=args.get("verso")
+        print(verso)
+        return "succed"
+    except:
+        return "failed"
+    
 
 @app.route("/es5")
 def esercizio5():
