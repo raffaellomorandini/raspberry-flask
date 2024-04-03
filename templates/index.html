@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raspberry</title>
+
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/button.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/form.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/bar.css')}}">
+  <link rel="shortcut icon" href="{{url_for('static', filename='assets/raspberry.ico')}}" type="image/x-icon">
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <script src="{{url_for('static', filename='js/gsap.js')}}"></script>
+
+</head>
+<body>
+  <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+  
+  <main class="container">
+    <div class="bar-container">
+      <div class="bar"></div>
+    </div>
+    <div class="scroll-down">
+      <h1>Scroll Down</h1>
+      <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 64 64" id="down-arrow"><path fill="none" stroke="#f1f1f1" stroke-miterlimit="10" stroke-width="4" d="M32,61.12l28-28-28,28-28-28"></path><line x1="32" x2="32" y2="61.12" fill="none" stroke="#f1f1f1" stroke-miterlimit="10" stroke-width="4"></line></svg>
+    </div>
+    <form action="/es1" target="dummyframe" class="form-1">
+      <h2>Esercizio 1</h2>
+      <p>
+        Progettare un circuito e scrivere un programma Python che accenda e spenga 10
+        volte un led
+      </p>
+      
+      <button type="submit">Invia</button>
+    </form>
+  
+  
+    <form action="/es2" target="dummyframe" class="form-2">
+      <h2>Esercizio 2</h2>
+      <p>
+        Progettare un circuito con due led e scrivere un programma Python che
+        per 10 volte alterni l'accensione dei due led
+      </p>
+      
+      <button type="submit">Invia</button>
+    </form>
+  
+  
+    <form action="/es3" target="dummyframe" class="form-3">
+      <h2>Esercizio 3</h2>
+      <p>
+        Scrivere un codice che presi in input tre numeri: “a”, “b” e “c” faccia lampeggiare il
+        primo led se a è pari il secondo se è dispari. Il led scelto dovrà lampeggiare b volte
+        e stare acceso e spento per c secondi
+      </p>
+      <input type="number" name="led" id="led" placeholder="Inserisci il led (pari o dispari)" required>
+      <input type="number" name="volte" id="volte" placeholder="Inserisci le volte che dovra lampeggiare" required>
+      <input type="number" name="tempo" id="tempo" placeholder="Inserisci il tempo che deve stare accceso/spento" required>
+      <button type="submit">Invia</button>
+    </form>
+
+
+    <form action="/es4" target="dummyframe" class="form-4">
+      <h2>Esercizio 4</h2>
+      <p>
+        Progettare un circuito con tre led e scrivere un programma Python che a seconda
+        dell’input dell’utente accenda e spenga i led da destra verso sinistra, o da sinistra
+        verso destra per il numero di volte indicato dall’utente
+      </p>
+      <select name="verso" id="verso" required>
+        <option value="destra">Destra</option>
+        <option value="sinistra">Sinistra</option>
+      </select>
+      
+      <button type="submit">Invia</button>
+    </form>
+
+
+    <form action="/es5" target="dummyframe" class="form-5">
+      <h2>Esercizio 5</h2>
+      <p>
+        Scrivere un programma python che, preso in input il tempo di durata del verde ed il
+        tempo di durata del rosso, simuli il comportamento di un semaforo (nota il giallo dura 3
+        secondi).
+      </p>
+      <input type="number" name="verde" id="verde" placeholder="Inserisci il tempo del led verde" required>
+      <input type="number" name="rosso" id="rosso" placeholder="Inserisci il tempo del led rosso" required>
+      
+      <button type="submit">Invia</button>
+    </form>
+
+
+    <form action="/es6" target="dummyframe" class="form-6">
+      <h2>Esercizio 6</h2>
+      <p>
+        Come l'esercizio 5 ma si gestiscano entrambi i semafori di un incrocio
+        facendo in modo che quando il primo è rosso il secondo sia verde e viceversa. Per
+        evitare incidenti si faccia in modo che per tre secondi ci sia il rosso su entrambi i
+        semafori.
+      </p>
+      <input type="number" name="verde" id="verde" placeholder="Inserisci il tempo del led verde" required>
+      <input type="number" name="rosso" id="rosso" placeholder="Inserisci il tempo del led rosso" required>
+      
+      <button type="submit">Invia</button>
+    </form>
+
+
+    <form action="/es7" target="dummyframe" class="form-7">
+      <h2>Esercizio 7</h2>
+      <p>
+        Progettare un circuito e scrivere un programma Python che, dato in input un
+        numero tra 0 e 7 visualizzi su tre led il codice binario del numero inserito
+      </p>
+      <input type="number" name="num" id="num" placeholder="Inserisci un numero (0-255)" required min="0" max="255">
+      
+      <button type="submit">Invia</button>
+    </form>
+
+
+    <form action="/es8" target="dummyframe" class="form-8">
+      <h2>Esercizio 8</h2>
+      <p>
+        Come il precedente ma si dia a disposizione dell’utente un menù che permetta
+        di: (a) aumentare di uno il numero visualizzato(b)diminuire di uno il numero
+        visualizzato (b) aumentare di due il numero visualizzato
+        (c) diminuire di due il numero visualizzato
+        (d) cambiare il numero visualizzato
+      </p>
+      <input type="number" name="num" id="num" placeholder="Inserisci un numero (0-255)" required min="0" max="255">
+      
+      <button type="submit">Invia</button>
+    </form>
+
+    
+    <form action="/es9" target="dummyframe" class="form-9">
+      <h2>Esercizio 9</h2>
+      <p>
+        Progettare un circuito e scrivere un programma Python che, presa in input una
+        stringa, comandi il led in modo da trasmettere il codice morse della lettera
+        data. (NOTE durata accensione punto: mezzo secondo, durata accensione
+        linea: 1 secondo)
+      </p>
+      <input type="text" name="testo" id="testo" placeholder="Inserisci una frase" required>
+      
+      <button type="submit">Invia</button>
+    </form>
+  </main>
+  
+
+
+</body>
+</html>

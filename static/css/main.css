@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Space%20Grotesk:700|Space%20Grotesk:400');
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Space Grotesk';
+}
+:root {
+/*  change this for scaling  */
+  --m: 1.5rem;
+  
+  --red: #FF6565;
+  --pink: #FF64F9;
+  --purple: #6B5FFF;
+  --blue: #4D8AFF;
+  --green: #5BFF89;
+  --yellow: #FFEE55;
+  --orange: #FF6D1B;
+  
+}
+body {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/background.svg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.scroll-down{
+  width: 500px;
+  height: 700px;
+  border: 2px gray solid;
+  border-radius: 10px;
+  background-color: #181919;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f1f1f1;
+  gap: 80px;
+}
+.scroll-down svg {
+  width: 40px;
+  animation: bounce 2s infinite;
+}
+
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --m: 1rem;
+  }
+}
+@keyframes animate {
+  0% {background-position: 0}
+  100% {background-position: 200%}
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
