@@ -50,40 +50,59 @@ def esercizio4():
 
 @app.route("/es5")
 def esercizio5():
-    args = request.args
-    verde = args.get("verde")
-    rosso = args.get("rosso")
-    print(verde, rosso)
-    return "succed"
+    try:
+        args = request.args
+        verde = args.get("verde")
+        rosso = args.get("rosso")
+        print(verde, rosso)
+        return "succed"
+    except:
+        return "failed"
+    
 
 @app.route("/es6")
 def esercizio6():
-    args = request.args
-    verde = args.get("verde")
-    rosso = args.get("rosso")
-    print(verde, rosso)
-    return "succed"
+    try:
+        args = request.args
+        verde = args.get("verde")
+        rosso = args.get("rosso")
+        print(verde, rosso)
+        return "succed"
+    except:
+        return "failed"
+    
 
 @app.route("/es7")
 def esercizio7():
-    args = request.args
-    num = args.get("num")
-    print(num)
-    return "succed"
+    try:
+        args = request.args
+        num = args.get("num")
+        print(num)
+        return "suceed"
+    except:
+        return "failed"
 
 @app.route("/es8")
 def esercizio8():
-    args = request.args
-    num = args.get("num")
-    print(num)
-    return "succed"
+    try:
+        args = request.args
+        num = args.get("num")
+        print(num)
+        return "succed"
+    except:
+        return "failed"
+
 
 @app.route("/es9")
 def esercizio9():
-    args = request.args
-    testo = args.get("testo")
-    print(testo)
-    return "succed"
+    try:
+        args = request.args
+        testo = args.get("testo")
+        print(testo)
+        return "succed"
+    except:
+        return "failed"
+    
 
 if __name__ == "__main__":
     app.run(debug=True,host=host,port=port)
